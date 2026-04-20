@@ -56,7 +56,7 @@
 \definecolor{PosterMidBlue}  {RGB}{55, 110, 180}
 \definecolor{PosterLightBlue}{RGB}{190, 220, 245}
 \definecolor{PosterAccent}   {RGB}{210,  90,   0}
-\definecolor{ColumnBg}       {RGB}{247, 250, 253}
+\definecolor{ColumnBg}       {RGB}{247, 246, 253}
 
 % ============================================================
 %  tcolorbox styles
@@ -72,7 +72,7 @@
         coltitle     = white,
         fonttitle    = \fontsize{36}{43}\selectfont\bfseries,
         boxrule      = 1.8pt,
-        arc          = 5pt,
+        arc          = 10pt,
         title        = {#1},
         toptitle     = 8pt,
         bottomtitle  = 8pt,
@@ -242,7 +242,10 @@
     My general workflow for analysis relied on a custom-written HR Diagram script, which allowed easy graphing of the donor star within the evolved population. Furthermore, this script utilized the Python package Bokeh, which allowed for interactive html plots, allowing for more efficient analysis. A simple use example can be found at \url{https://piersonlip.github.io/Posydon_HR_Graphing_Script/} This script was then applied to each observed system (see fig \ref{fig:VelaX-1}, \ref{fig:WUMaHRDiagram}, \ref{fig:V404CygniPopComp}).
 
     \begin{center}
-      \includegraphics[width=.7\textwidth]{figs/generatedFigs/VelaX1HMXB.png}
+      \resizebox{.7\textwidth}{!}{
+        \import{figs/generatedFigs/}{VelaX1HMXBPopulationHRComp.pgf}
+        }
+      % \includegraphics[width=.7\textwidth]{figs/generatedFigs/VelaX1HMXB.png}
       \captionof{figure}{Vela X-1's observed temperature and luminosity in comparison to similar detached HMXBs. Note that the `black box' is a representation of the error range}
       \label{fig:VelaX-1}
     \end{center}
@@ -251,7 +254,14 @@
   \vspace{.5cm}
 
     \begin{center}
-      \includegraphics[width=.8\textwidth]{figs/generatedFigs/WUMaHRDiagram.png}
+
+      %TC:ignore
+      \resizebox{.8\textwidth}{!}{
+        \import{figs/generatedFigs/}{WUMaHRDiagram.pgf}
+        }
+      %TC:endignore
+
+      % \includegraphics[width=.8\textwidth]{figs/generatedFigs/WUMaHRDiagram.png}
       \captionof{figure}{W Ursae Majoris observed temperature and luminosity in comparison to evolved contact binaries.}
       \label{fig:WUMaHRDiagram}
     \end{center}
@@ -324,7 +334,9 @@
 
       \begin{center}
         \resizebox{.9\textwidth}{!}{
+        %TC:ignore
         \import{figs/generatedFigs/}{MoeDistro_Vs_Rand.pgf}
+        %TC:endignore
         }
         \captionof{figure}{Plot of the initial properties in BH-Sol progenitors. Includes a grid using a mass distribution from \cite{moe_mind_2017} and a sampled distribution.}
         \label{fig:MoeVsRand}
@@ -345,8 +357,11 @@
   
   With W UMa and Vela X-1 the results, while on the more extreme side, were expected, however, with V404 Cygni the results seemed to hint at a much larger phenomenon. After consulting literature, it became clear that recent papers (namely~\cite{2024Natur.635..316B}) had discovered that V404 Cygni was in fact \textit{not} a binary system, instead being a tertiary system, with a third star orbiting around the giant and BH's COM. The property comparison between V404 Cygni and the simulated population greatly supports the work proposed in \cite{2024Natur.635..316B}, where they suggest the tertiary star played a key role in the evolution of the central binary. 
 
-\begin{center}
-      \includegraphics[width=\textwidth]{figs/generatedFigs/V404EntireDatasetPopulationHRComp.png}
+    \begin{center}
+      % TC:ignore
+      \includegraphics[width=1\textwidth]{figs/generatedFigs/V404XBsPopulationHRComp.pdf}
+      % TC:endignore
+      % \includegraphics[width=\textwidth]{figs/generatedFigs/V404EntireDatasetPopulationHRComp.png}
       \captionof{figure}{V404 Cygni plotted against all other finished binaries.}
       \label{fig:V404CygniPopComp}
     \end{center}
