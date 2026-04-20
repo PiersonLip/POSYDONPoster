@@ -152,7 +152,7 @@
 \bodyfont
 
 \begin{tcolorbox}[sectionbox=Abstract]
-  This poster serves as an introduction to \textbf{POSYDON} (\textbf{PO}pulation \textbf{SY}nthesis with \textbf{D}etailed binary-evolution simulati\textbf{ON}s), a binary population synthesis tool \cite{fragos_posydon_2023}\cite{posydon2023}. Additionally, it is a collection of finished and work-in-process projects which utilize POSYDON as the backbone of the research process. 
+  This poster serves as an introduction to \textbf{POSYDON} (\textbf{PO}pulation \textbf{SY}nthesis with \textbf{D}etailed binary-evolution simulati\textbf{ON}s), a binary population synthesis tool \cite{fragos_posydon_2023}\cite{posydon2023}. Additionally, it is a collection of finished and work-in-progress projects which utilize POSYDON as the backbone of the research process. 
 
   \textbf{Previous Work}
   \vspace{.5cm}
@@ -164,7 +164,7 @@
   \vspace{.5cm}
   \hrule
   \vspace{.5cm}
-    It is known that the progenitors to stellar mass BHs are high mass stars, with many of these stars being in binaries with stellar type stars. However, there is a large amount of uncertainty when it comes to formation and survival rate of these systems. As seen in \cite{green_upper_2025}, the `quiet' nature of these systems makes visual detection and observation difficult. Currently, I am hoping to find a formation rate and common evolutionary channel of low \(P_{orb}\) black hole sunlike star (henceforth `BH-Sol') binary systems via population synthesis with POSYDON.
+    It is known that the progenitors to stellar mass BHs are high mass stars, with many of these stars being in binaries with solar-type stars. However, there is a large amount of uncertainty when it comes to formation and survival rate of these systems. As seen in \cite{green_upper_2025}, the `quiet' nature of these systems makes visual detection and observation difficult. Currently, I am hoping to find a formation rate and common evolutionary channel of low \(P_{orb}\) black hole sunlike star (henceforth `BH-Sol') binary systems via population synthesis with POSYDON.
 
 % \lipsum[1]
 
@@ -176,7 +176,7 @@
   \hrule
   \vspace{.5cm}
   
-  Binary star evolution is a complicated and nuanced field of investigation that is deeply critical to our understanding of the universe. Binaries are critical for our understanding of cosmology due to type la SN and BH mergers driving our understanding of general relativity. Furthermore, these binary systems make up the majority of the stars in our galaxy, with an estimated 60\%-80\% of all massive stars in our MW being in a binary. While a large portion of those will evolve with a wide enough separation to evolve independently, there is a sizable fraction which do interact. Due to the already moderately complicated process of single star evolution, the possibility for binary evolution in interacting systems is extremely large and nuanced (see fig~\ref{fig:binary_evolution_flowchart}). This process poses a great problem when it comes to accurately modeling these systems from formation to end, something that POSYDON hopes to mitigate.       
+  Binary star evolution is a complicated and nuanced field of investigation that is deeply critical to our understanding of the universe. Binaries are critical for our understanding of cosmology due to Type Ia SN and BH mergers driving our understanding of general relativity. Furthermore, these binary systems make up the majority of the stars in our galaxy, with an estimated 60\%-80\% of all massive stars in our MW being in a binary. While a large portion of those will evolve with a wide enough separation to evolve independently, there is a sizable fraction which do interact. Due to the already moderately complicated process of single star evolution, the possibility for binary evolution in interacting systems is extremely large and nuanced (see fig~\ref{fig:binary_evolution_flowchart}). This process poses a great problem when it comes to accurately modeling these systems from formation to end, something that POSYDON hopes to mitigate.       
 
     \begin{center}
       \includegraphics[width=\textwidth]{figs/reusedFigs/BinaryEvolutionFlowchart.jpg}
@@ -188,7 +188,7 @@
   \vspace{.5cm}
   \hrule
   \vspace{.5cm}
-    POSYDON is an open source tool for simulation, interpretation, and analysis of binary system  populations. POSYDON first takes a user configurable population of initial zero-age main sequence (ZAMS) systems and evolves them through a series of MESA grids and solvers, recording their properties at the start and end of each stage. By taking this approach, it allows for systems with vast, complicated evolutionary paths to be evolved from start to end in a computationally efficient manner. POSYDON provides the framework to do this process in a high performance computing environment, allowing massive and rapid analysis \parencite{posydon2023}. (See table~\ref{tab:POSYDONDataExample} for an example of data structure.) In practical use, this allows for much broader and accurate inquiry. 
+    POSYDON is an open source tool for simulation, interpretation, and analysis of binary system populations. POSYDON first takes a user configurable population of initial zero-age main sequence (ZAMS) systems and evolves them through a series of MESA grids and solvers, recording their properties at the start and end of each stage. By taking this approach, it allows for systems with vast, complicated evolutionary paths to be evolved from start to end in a computationally efficient manner. POSYDON provides the framework to do this process in a high performance computing environment, allowing massive and rapid analysis \parencite{posydon2023}. (See table~\ref{tab:POSYDONDataExample} for an example of data structure.) In practical use, this allows for much broader and accurate inquiry. 
     \vspace{4.5cm}
       \begin{center}
         \smallfont
@@ -226,11 +226,11 @@
   \vspace{.5cm}
   \hrule
   \vspace{.5cm} 
-    As outlined in \cite{green_upper_2025}, the formation rate and evolutionary channels of BH-Sol binaries are useful for deeper understanding of XrBs. However, these systems pose great difficulty when trying to use observational methods. This is because, in contrast to XrBs, they are `quiet', with the only sign of a BH companion being in slight variations to the sun-like stars' spectra. Due to this, \cite{green_upper_2025} is only able to put an upper limit via non-detection of the formation rate of these systems at 1 in \(10^5\).
+    As outlined in \cite{green_upper_2025}, the formation rate and evolutionary channels of BH-Sol binaries are useful for deeper understanding of XrBs. However, these systems pose great difficulty when trying to use observational methods. This is because, in contrast to XrBs, they are `quiet,' with the only sign of a BH companion being in slight variations to the sun-like stars' spectra. Due to this, \cite{green_upper_2025} is only able to put an upper limit via non-detection of the formation rate of these systems at 1 in \(10^5\).
 
-    Because of the difficulty of visual observation, I hope to take a largely different approach, instead utilizing POSYDON. This methodology will (ideally) allow proposing an expected formation (and possibly detection rate) of BH-Sol systems, as well an investigation of the evolutionary channels of BH-Sol systems.
+    Because of the difficulty of visual observation, I hope to take a largely different approach, instead utilizing POSYDON. This methodology will (ideally) allow proposing an expected formation (and possibly detection rate) of BH-Sol systems, as well as an investigation of the evolutionary channels of BH-Sol systems.
 
-    Even when investigating a very specific type of system, it is best practice to start with as generalized of a grid as possible. In this case, I started with a grid which utilized initial mass distributions from \cite{moe_mind_2017}, with the initial masses being constrained to \(4< M_{1, \odot} < 150\), \(.1< M_{2, \odot} < 150\). This `wide net' approach is crucial, as the evolutionary channels can be very diverse, with many `paths' leading to the same `destination'.
+    Even when investigating a very specific type of system, it is best practice to start with as generalized of a grid as possible. In this case, I started with a grid which utilized initial mass distributions from \cite{moe_mind_2017}, with the initial masses being constrained to \(4< M_{1, \odot} < 150\), \(.1< M_{2, \odot} < 150\). This `wide net' approach is crucial, as the evolutionary channels can be very diverse, with many `paths' leading to the same `destination.'
     
 \end{tcolorbox}
 
@@ -239,7 +239,7 @@
   \vspace{.5cm}
   \hrule
   \vspace{.5cm}
-    My general workflow for analysis relied on a custom-written HR Diagram script, which allowed easy graphing of the donor star within the evolved population. Furthermore, this script utilized the Python package Bokeh, which allowed for interactive html plots, allowing for more efficient analysis. A simple use example can be found at \url{https://piersonlip.github.io/Posydon_HR_Graphing_Script/} This script was then applied to each observed system (see fig \ref{fig:VelaX-1}, \ref{fig:WUMaHRDiagram}, \ref{fig:V404CygniPopComp}).
+    My general workflow for analysis relied on a custom-written HR Diagram script, which allowed easy graphing of the donor star within the evolved population. Furthermore, this script utilized the Python package Bokeh, which allowed for interactive HTML plots, allowing for more efficient analysis. A simple use example can be found at \url{https://piersonlip.github.io/Posydon_HR_Graphing_Script/} This script was then applied to each observed system (see fig \ref{fig:VelaX-1}, \ref{fig:WUMaHRDiagram}, \ref{fig:V404CygniPopComp}).
 
     \begin{center}
       %TC:ignore
@@ -386,7 +386,7 @@
 \begin{tcolorbox}[sectionbox=Discussion]
   All \LaTeX~~and code for this poster, as well as various reports and papers, can be found at \url{https://github.com/PiersonLip/}. 
 
-  While the previous work comparing observed binaries to POSYDON evolved populations did little in terms of actual `depth', it was nevertheless a fascinating introduction to the research experience, and figuring out what was happening with V404 Cygni was a really awesome experience.    
+  While the previous work comparing observed binaries to POSYDON evolved populations did little in terms of actual `depth,' it was nevertheless a fascinating introduction to the research experience, and figuring out what was happening with V404 Cygni was a really awesome experience.    
 
 \end{tcolorbox}
 
