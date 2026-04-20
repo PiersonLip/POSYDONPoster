@@ -6,3 +6,4 @@
 - logos?
 - time permitting, run general things past ilia
 - probably change citation format to be author year format.   
+- find out how posydon does CE evo
