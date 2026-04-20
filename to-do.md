@@ -1,0 +1,7 @@
+- all of results 
+- disc (add github links for everything)
+- clean up everything 
+- time permitting, remake all old graphs from previous project in .pgf format 
+- figure out how to make the white bg transparent? maybe some automatic way, but unsure, look into the way zotero somehow magically makes perfect dark mode figs
+- logos?
+- time permitting, run general things past ilia 
