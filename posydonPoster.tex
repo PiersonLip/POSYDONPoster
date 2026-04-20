@@ -18,12 +18,16 @@
 \usepackage{multicol}
 \usepackage{tabularx}
 \usepackage{caption}
+\usepackage{import}
+\usepackage[strings]{underscore}
+\usepackage{pgfplots}
 \DeclareCaptionFont{postercap}{\fontsize{16}{24}\selectfont}
 \captionsetup{font=postercap}
 \usepackage{lipsum}   % placeholder — remove when drafting is done
 \usepackage[backend=biber, style=numeric, sorting=none]{biblatex}
 \addbibresource{refs.bib}
 
+\def\mathdefault#1{#1}
 \usetikzlibrary{calc, arrows.meta, positioning}
 \usepgfplotslibrary{colorbrewer}
 \pgfplotsset{compat=1.9}
@@ -123,7 +127,7 @@
     \begin{minipage}[c]{\linewidth}
         \centering
         {\fontsize{72}{86}\selectfont\bfseries\color{white}
-            How Did We Get Here? Retracing the Lives of Binary Systems with POSYDON}\\[10pt]
+            How Did We Get Here? Retracing the Lives of Binary Stars with POSYDON}\\[10pt]
         {\fontsize{38}{46}\selectfont\color{PosterLightBlue}
             A collection of work regarding the channels of binary star evolution}\\[10pt]
         {\fontsize{30}{36}\selectfont\color{white}
@@ -147,7 +151,7 @@
 \bodyfont
 
 \begin{tcolorbox}[sectionbox=Abstract]
-  This poster serves as an introduction to \textbf{POSYDON} (\textbf{PO}pulation \textbf{SY}nthesis with \textbf{D}etailed binary-evolution simulati\textbf{ON}s), a tool used for population synthesis of binary stars \cite{posydon2023}. Additionally, it is a collection of finished and work-in-process projects which utilize POSYDON as the backbone of the investigation process. 
+  This poster serves as an introduction to \textbf{POSYDON} (\textbf{PO}pulation \textbf{SY}nthesis with \textbf{D}etailed binary-evolution simulati\textbf{ON}s), a tool used for population synthesis of binary stars \cite{posydon2023}. Additionally, it is a collection of finished and work-in-process projects which utilize POSYDON as the backbone of the research process. 
 
   \textbf{Current Work}
   \vspace{.5cm}
@@ -159,7 +163,7 @@
   \vspace{.5cm}
   \hrule
   \vspace{.5cm}
-    This previous work served as a general introduction for me to POSYDON, its general data structure, and the processes driving binary evolution. I broke down into simplified `stages' of binary evolution, which I defined to be detached, semi-detached, and contact systems, comparing simulated populations with the `poster children' of said stage. These reference stars included Vela X-1, V404 Cygni, and W Ursae Majoris respectively. From this comparison I found that these systems are largely outsiders in their respective stages, and furthermore present evidence that V404 Cygni must have evolved as a tertiary system with all three stars playing a respective roll in the evolution.  
+    This previous work was completed during the fall 2025 semester at the College of DuPage as a part of an honors independent study. It served as a general introduction to POSYDON, its general data structure, and the various processes  driving binary evolution. I broke down into simplified `stages' of binary evolution, which I defined to be detached, semi-detached, and contact systems, comparing simulated populations with the `poster children' of said stage. These reference stars included Vela X-1, V404 Cygni, and W Ursae Majoris respectively. From this comparison I found that these systems are largely outsiders in their respective stages, and furthermore present evidence that V404 Cygni must have evolved as a tertiary system with all three stars playing a respective roll in the evolution.  
 
 % \lipsum[1]
 
@@ -183,11 +187,7 @@
   \vspace{.5cm}
   \hrule
   \vspace{.5cm}
-    POSYDON is an open source tool for simulation, interpretation, and analyzation of binary systems. POSYDONs approach allows for much more streamlined and open-ended investigation to occur.  
-    
-    POSYDON works through a mix of interprelatation via MESA simulated grids as well as dedicated solvers. This allows for systems to be fully evolved from ZAMS. 
-
-    POSYDON is heavily structured around MESA simulated grids which are used to intreprelate how    
+    POSYDON is an open source tool for simulation, interpretation, and analyzation of binary systems. While POSYDON is heavily reliant on MESA grids, it takes a largely different approach. POSYDON takes an initial zero-age main sequence (ZAMS) system and evolves it through a series of grids and solvers, recording the properties at the start and end of each stage. By taking this approach, it allows for systems with vast, complicated evolutionary paths to be recorded from start to end. POSYDON provides the framework to do this process in a high performance computing environment, allowing massive and rapid analysis \parencite{posydon2023}. See table~\ref{tab:POSYDONDataExample} for an example of data structure.
 
       \begin{center}
         \smallfont
@@ -210,8 +210,7 @@
         \captionof{table}{Example of POSYDON data, heavily modified for readability}
         \label{tab:POSYDONDataExample}
       \end{center}
-
-    \textbf{\lipsum[3]}
+    % \textbf{\lipsum[3]}
 
 
   \textbf{Previous Work}
@@ -224,7 +223,7 @@
       
     My process for analyzing these systems consisted of first finding said `poster children' for the systems, and then comparing said systems to their simulated population counterparts. To select my reference systems, mainly relying on historic means, picking the systems that helped drive the research forward in their respective categories forward. From this initial process I settled on Vela X-1, V404 Cygni, and W Ursae Majoris.
 
-    For my reference populations I made the choice to evolve a grid with as minimal of initial biasing. In order to do this, I sourced a finished \(1Z_\odot\) POSYDON grid where all the systems were initially binaries, but with random mass ratios, eccentricities, and periods. This allowed for a dataset which contained binaries in all stages of evolution, at a wide range of masses, allowing for more detailed analysis.
+    For my reference populations I made the choice to evolve a grid with as minimal of initial biasing. In order to do this, I sourced a finished \(1Z_\odot\) POSYDON grid of a million systems where all the systems were initially binaries, but with random mass ratios, eccentricities, and periods. This allowed for a dataset which contained binaries in all stages of evolution, at a wide range of masses, allowing for more detailed analysis.
   
   \textbf{Current Work}
   \vspace{.5cm}
@@ -234,7 +233,7 @@
 
     The end goal of this project is to both propose an expected formation (and possibly detection rate) of BH-Sol systems, as well as investigating the evolutionary channels of BH-Sol systems
 
-    Even when investigating a very specific type of system, it is best practice to start with as generalized of a grid as possible. In this case, I started with a grid which utilized initial mass distributions from \cite{moe_mind_2017}, with the initial masses being constrained to \(4< M_{1, \odot} < 150\), \(.1< M_{1, \odot} < 150\). This `wide net' approach is crucial, as the evolutionary channels can be very diverse, with many `paths' leading to the same destination.
+    Even when investigating a very specific type of system, it is best practice to start with as generalized of a grid as possible. In this case, I started with a grid which utilized initial mass distributions from \cite{moe_mind_2017}, with the initial masses being constrained to \(4< M_{1, \odot} < 150\), \(.1< M_{2, \odot} < 150\). This `wide net' approach is crucial, as the evolutionary channels can be very diverse, with many `paths' leading to the same destination.
     
 \end{tcolorbox}
 
@@ -256,18 +255,18 @@
 
     \begin{center}
       \includegraphics[width=.8\textwidth]{figs/generatedFigs/WUMaHRDiagram.png}
-      \captionof{figure}{W Ursae Majoris observed temperature and luminosity in comparison to evolved contact binaries.}
+      \captionof{figure}{W Ursae Majoris observed temperature and luminosity in comparison to evolved contact binaries. Note that the CE solver has been altered since this population.}
       \label{fig:WUMaHRDiagram}
     \end{center}
     
-    However, it quickly became clear that V404 Cygni was more than just an extreme case, it was radically different from the evolved population. This is discussed further in Results.  
+    However, it quickly became clear that V404 Cygni was more than just an extreme case, it was radically different from the evolved population. This is discussed further in results.  
 
 
   \textbf{Current Work}
   \vspace{.5cm}
   \hrule
   \vspace{.5cm} 
-    After evolving the initial grid I found a dominate channel of evolution emerged, this being \verb|ZAMS_oCE1_CC1_oRLO2_CC2|. Via inspection of the evolution history, it is evident that the systems evolve detached, then into post-MS \textbf{unstable} RLO via S1 \(\rightarrow\) S2. This period decrease leads to common envelope, which then \textit{greatly} decreases the orbital period. The envelope is then ejected, leaving a depleted stripped He core. The core then collapses in a couple of thousand years, leaving the system in a BH-Sol state with low \(p_{orb}\)/separation. Furthermore, I found that the systems were quite constrained with their initial properties (see table \ref{tab:G1_Init_Props})
+    After evolving the initial grid I found a dominate channel of evolution emerged, this being \verb|ZAMS_oCE1_CC1_oRLO2_CC2|. Via inspection of the evolution history, it is evident that the systems evolve detached, then into post-MS unstable RLO via S1 \(\rightarrow\) S2. This period decrease leads to common envelope, which then \textit{greatly} decreases the orbital period. The envelope is then ejected, leaving a depleted stripped He core. The core then collapses in a couple of thousand years, leaving the system in a BH-Sol state with low \(p_{orb}\)/separation. Furthermore, I found that the systems were quite constrained with their initial properties (see table \ref{tab:G1_Init_Props})
 
     \begin{center}
         \begin{minipage}[t]{0.3\textwidth}
@@ -326,18 +325,31 @@
     \end{center}
     \captionof{table}{Distributions of initial conditions in BH-Sol progenitors in Grid 1.}
     \label{tab:G1_Init_Props}
-      After the discovery of this channel in the initial population, I decided to focus on trying to understand it more in depth. From this I moderately constrained the initial grids to the distribution of previously evolved BH-Sol systems. This allowed for a much greater quantity of BH-Sol systems to be evolved, allowing for further analysis.  
+      After the discovery of this channel in the initial population, I decided to focus on trying to understand it more in depth. From this I moderately constrained the initial grids to the distribution of previously evolved BH-Sol systems. This allowed for a much greater quantity of BH-Sol systems to be evolved, allowing for further analysis. Previous work from \parencite{green_upper_2025} placed an upper limit on the orbital period of these systems when filtering, however, when investigating the population, it became clear that the period of the systems was dependent on the stage of CE evolution, with little distinction between systems with \(P_{orb} < 300\text{d}\). As a side effect of the evolutionary channel of BH-Sol systems it has become key to understand the survivability of the CE stage, which can start to be seen in fig \ref{fig:MoeVsRand}.
+
+      \begin{center}
+        \resizebox{1\textwidth}{!}{
+        \import{figs/generatedFigs/}{MoeDistro_Vs_Rand.pgf}
+        }
+        \captionof{figure}{Plot of the initial properties in BH-Sol progenitors. Includes a grid using a mass distribution from \cite{moe_mind_2017} and a sampled distribution.}
+        \label{fig:MoeVsRand}
+      \end{center}
+
+      As of now, 5 more grids have been simulated with various initial properties and metallicities. These grids are all still in the process of investigation. 
         
-
-    \textbf{\lipsum[3-4]}
-
 \end{tcolorbox}
 
 % \columnbreak
 
-\begin{tcolorbox}[sectionbox=Results]
+\begin{tcolorbox}[sectionbox=Previous Results and Current Questions]
 
-\lipsum[6-8]
+  \textbf{Previous Work}
+  \vspace{.5cm}
+  \hrule
+  \vspace{.5cm} 
+  
+  With W UMa and Vela X-1 the results, while on the more extreme side, were expected, however, with V404 Cygni the results seemed to hint at a much larger phenomenon  
+
 
 \begin{center}
       \includegraphics[width=\textwidth]{figs/generatedFigs/V404EntireDatasetPopulationHRComp.png}
@@ -345,7 +357,16 @@
       \label{fig:binary_evolution_flowchart}
     \end{center}
 
+  \textbf{Next Steps and Current Questions}
+  \vspace{.5cm}
+  \hrule
+  \vspace{.5cm}
+
+  \lipsum[6]
+
 \end{tcolorbox}
+
+
 
 % \columnbreak  ← uncomment to force column 4 to start here
 
