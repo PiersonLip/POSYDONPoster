@@ -189,7 +189,7 @@
   \hrule
   \vspace{.5cm}
     POSYDON is an open source tool for simulation, interpretation, and analysis of binary system  populations. POSYDON first takes a user configurable population of initial zero-age main sequence (ZAMS) systems and evolves them through a series of MESA grids and solvers, recording their properties at the start and end of each stage. By taking this approach, it allows for systems with vast, complicated evolutionary paths to be evolved from start to end in a computationally efficient manner. POSYDON provides the framework to do this process in a high performance computing environment, allowing massive and rapid analysis \parencite{posydon2023}. (See table~\ref{tab:POSYDONDataExample} for an example of data structure.) In practical use, this allows for much broader and accurate inquiry. 
-    \vspace{5.1cm}
+    \vspace{4.5cm}
       \begin{center}
         \smallfont
         \begin{tabularx}{\linewidth}{||X | X | X | X | X | X | X | X ||}
@@ -242,9 +242,13 @@
     My general workflow for analysis relied on a custom-written HR Diagram script, which allowed easy graphing of the donor star within the evolved population. Furthermore, this script utilized the Python package Bokeh, which allowed for interactive html plots, allowing for more efficient analysis. A simple use example can be found at \url{https://piersonlip.github.io/Posydon_HR_Graphing_Script/} This script was then applied to each observed system (see fig \ref{fig:VelaX-1}, \ref{fig:WUMaHRDiagram}, \ref{fig:V404CygniPopComp}).
 
     \begin{center}
+      %TC:ignore
+
       \resizebox{.7\textwidth}{!}{
         \import{figs/generatedFigs/}{VelaX1HMXBPopulationHRComp.pgf}
         }
+      %TC:endignore
+
       % \includegraphics[width=.7\textwidth]{figs/generatedFigs/VelaX1HMXB.png}
       \captionof{figure}{Vela X-1's observed temperature and luminosity in comparison to similar detached HMXBs. Note that the `black box' is a representation of the error range}
       \label{fig:VelaX-1}
@@ -356,10 +360,10 @@
   \vspace{.5cm} 
   
   With W UMa and Vela X-1 the results, while on the more extreme side, were expected, however, with V404 Cygni the results seemed to hint at a much larger phenomenon. After consulting literature, it became clear that recent papers (namely~\cite{2024Natur.635..316B}) had discovered that V404 Cygni was in fact \textit{not} a binary system, instead being a tertiary system, with a third star orbiting around the giant and BH's COM. The property comparison between V404 Cygni and the simulated population greatly supports the work proposed in \cite{2024Natur.635..316B}, where they suggest the tertiary star played a key role in the evolution of the central binary. 
-
+  
     \begin{center}
       % TC:ignore
-      \includegraphics[width=1\textwidth]{figs/generatedFigs/V404XBsPopulationHRComp.pdf}
+      \includegraphics[width=1.1\textwidth]{figs/generatedFigs/V404XBsPopulationHRComp.pdf}
       % TC:endignore
       % \includegraphics[width=\textwidth]{figs/generatedFigs/V404EntireDatasetPopulationHRComp.png}
       \captionof{figure}{V404 Cygni plotted against all other finished binaries.}
